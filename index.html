@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANGO STORE - Loja Oficial de vendas Roblox</title>
+    <link rel="stylesheet" href="/frontend/css/css_pag_principal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/mango.png">
+</head>
+<body class="light-mode">
+    <!-- Fundo Animado -->
+    <div class="animated-bg" id="animatedBg"></div>
+
+    <!-- Header/Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#home">
+                        <i class="fas fa-apple-alt logo-icon"></i>
+                        <span class="logo-text">
+                            <span class="logo-mango">MANGO</span>
+                            <span class="logo-store">STORE</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Menu Principal -->
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="#categories" class="nav-link"><i class="fas fa-gamepad"></i> Categorias</a></li>
+                        <li><a href="#products" class="nav-link"><i class="fas fa-box"></i> Produtos</a></li>
+                        <li><a href="#payment" class="nav-link"><i class="fas fa-qrcode"></i> PIX</a></li>
+                        <li><a href="#support" class="nav-link"><i class="fas fa-headset"></i> Suporte</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Menu de Ações -->
+                <div class="nav-icons">
+                    <!-- Botão Tema -->
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    
+                    <!-- Carrinho -->
+                    <button class="icon-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <!-- Botão Login -->
+                    <button class="icon-btn" id="loginBtn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    
+                    <!-- Menu Mobile -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner Promocional -->
+        <div class="promo-banner" id="promoBanner">
+            <div class="container">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h2>🎉 OFERTA ESPECIAL DE LANÇAMENTO! 🎉</h2>
+                        <p>10% OFF na primeira compra usando o código: </p>
+                    </div>
+                    <button class="close-banner" id="closeBanner">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal Carrinho -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h3><i class="fas fa-shopping-cart"></i> Meu Carrinho</h3>
+                <button class="cart-close" id="closeCartModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Itens do carrinho serão adicionados aqui via JavaScript -->
+                <div class="empty-cart" id="emptyCart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Seu carrinho está vazio</p>
+                    <a href="#products" class="btn btn-primary" id="goToProducts">
+                        <i class="fas fa-shopping-bag"></i> Ver Produtos
+                    </a>
+                </div>
+            </div>
+            
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="cart-total-price" id="cartTotalPrice">R$ 0,00</span>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-secondary" id="continueShopping">
+                        <i class="fas fa-arrow-left"></i> Continuar Comprando
+                    </button>
+                    <button class="btn btn-primary" id="checkoutBtn">
+                        <i class="fas fa-credit-card"></i> Finalizar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="mango-gradient">MANGO STORE</span>
+                </h1>
+                <h2 class="hero-subtitle">LOJA OFICIAL DE ROBLOX</h2>
+                <p class="hero-description">
+                    A maior loja especializada em <strong>Blox Fruits</strong> e <strong>Grand Piece Online</strong>.
+                    Compre frutas, itens e gamepasses com entrega instantânea!
+                </p>
+                
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-bolt highlight-icon"></i>
+                        <p>Entrega em até 10 minutos</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-shield-alt highlight-icon"></i>
+                        <p>100% Seguro</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users highlight-icon"></i>
+                        <p>+10.000 clientes</p>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" id="buyNowBtn">
+                        <i class="fas fa-shopping-bag"></i> Comprar Agora
+                    </button>
+                    <button class="btn btn-secondary" id="viewProductsBtn">
+                        <i class="fas fa-gamepad"></i> Ver Produtos
+                    </button>
+                    <button class="btn btn-secondary" id="howToBuyBtn">
+                        <i class="fas fa-play-circle"></i> Como Comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Categorias -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">CATEGORIAS EM DESTAQUE</h2>
+            <p class="section-subtitle">Escolha seu jogo e compre agora</p>
+            
+            <div class="category-grid">
+                <!-- Blox Fruits -->
+                <div class="category-card blox-card animate-on-scroll" id="blox-fruits-card">
+                    <div class="category-bg-overlay"></div>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>BLOX FRUITS</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Frutas, gamepasses, itens raros e muito mais para seu jogo!</p>
+                        <ul class="category-list">
+                            <li><i class="fas fa-check-circle"></i> Frutas Devil</li>
+                            <li><i class="fas fa-check-circle"></i> Gamepasses</li>
+                            <li><i class="fas fa-check-circle"></i> Beli e Frags</li>
+                            <li><i class="fas fa-check-circle"></i> Itens Raros</li>
+                        </ul>
+                    </div>
+                    <a href="/frontend/html/pagina_link fruta.html" class="btn btn-category">
+                        Ver Produtos <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="category-badge">
+                        <span class="badge-popular">MAIS VENDIDO</span>
+                    </div>
+                </div>
+                
+                <!-- GPO -->
+                <div class="category-card gpo-card animate-on-scroll" id="gpo-card">
+                    <div class="category-bg-overlay"></div>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h3>GRAND PIECE ONLINE</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Navios, frutas, itens exclusivos e muito mais!</p>
+                        <ul class="category-list">
+                            <li><i class="fas fa-check-circle"></i> Frutas Raras</li>
+                            <li><i class="fas fa-check-circle"></i> Navios e Designs</li>
+                            <li><i class="fas fa-check-circle"></i> Itens Exclusivos</li>
+                            <li><i class="fas fa-check-circle"></i> Berries e Níveis</li>
+                        </ul>
+                    </div>
+                    <a href="/frontend/html/pagina_link2 fruta.html" class="btn btn-category">
+                        Ver Produtos <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="category-badge">
+                        <span class="badge-new">LANÇAMENTO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">PRODUTOS EM DESTAQUE</h2>
+            <p class="section-subtitle">Os mais vendidos da semana</p>
+            
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card animate-on-scroll" data-game="blox-fruits">
+                    <div class="product-image">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dark Fruit</h3>
+                        <p class="product-description">Fruta rara do Blox Fruits com poderes especiais</p>
+                        <div class="product-price">R$ 49,90</div>
+                        <button class="btn btn-product add-to-cart" data-id="1" data-name="Dark Fruit" data-price="49.90">
+                            <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Produto 2 -->
+                <div class="product-card animate-on-scroll" data-game="gpo">
+                    <div class="product-image">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Coffin Boat</h3>
+                        <p class="product-description">Navio exclusivo do Grand Piece Online</p>
+                        <div class="product-price">R$ 79,90</div>
+                        <button class="btn btn-product add-to-cart" data-id="2" data-name="Coffin Boat" data-price="79.90">
+                            <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Produto 3 -->
+                <div class="product-card animate-on-scroll" data-game="blox-fruits">
+                    <div class="product-image">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">2x Money Gamepass</h3>
+                        <p class="product-description">Dobro de dinheiro no Blox Fruits</p>
+                        <div class="product-price">R$ 39,90</div>
+                        <button class="btn btn-product add-to-cart" data-id="3" data-name="2x Money Gamepass" data-price="39.90">
+                            <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Produto 4 -->
+                <div class="product-card animate-on-scroll" data-game="blox-fruits">
+                    <div class="product-image">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dragon Fruit</h3>
+                        <p class="product-description">Fruta lendária mais poderosa do jogo</p>
+                        <div class="product-price">R$ 99,90</div>
+                        <button class="btn btn-product add-to-cart" data-id="4" data-name="Dragon Fruit" data-price="99.90">
+                            <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Produto 5 -->
+                <div class="product-card animate-on-scroll" data-game="blox-fruits">
+                    <div class="product-image">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ghost Fruit</h3>
+                        <p class="product-description">Fruta especial com habilidades únicas</p>
+                        <div class="product-price">R$ 69,90</div>
+                        <button class="btn btn-product add-to-cart" data-id="5" data-name="Ghost Fruit" data-price="69.90">
+                            <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Produto 6 -->
+                <div class="product-card animate-on-scroll" data-game="gpo">
+                    <div class="product-image">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">VIP Package</h3>
+                        <p class="product-description">Pacote VIP com vantagens exclusivas</p>
+                        <div class="product-price">R$ 89,90</div>
+                        <button class="btn btn-product add-to-cart" data-id="6" data-name="VIP Package" data-price="89.90">
+                            <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Pagamento PIX -->
+    <section class="payment-section" id="payment">
+        <div class="container">
+            <h2 class="section-title">PAGAMENTO VIA PIX</h2>
+            <p class="section-subtitle">Rápido, seguro e sem complicação</p>
+            
+            <div class="payment-content">
+                <div class="payment-method">
+                    <div class="payment-header">
+                        <div class="payment-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3>Pagamento com PIX</h3>
+                    </div>
+                    <p class="payment-description">
+                        A MANGO STORE aceita apenas pagamentos via <strong>PIX</strong> para maior segurança e agilidade nas transações.
+                    </p>
+                    
+                    <div class="pix-demo">
+                        <div class="pix-qr">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <p class="pix-text">QR Code para pagamento</p>
+                        <div class="pix-key">
+                            <code id="pixKey">mangostore@roblox.com</code>
+                            <button class="copy-btn" id="copyPixBtn">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-steps">
+                    <h3>Como funciona?</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Escolha seus produtos</h4>
+                                <p>Adicione os itens ao carrinho</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Finalize a compra</h4>
+                                <p>Preencha seus dados do Roblox</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Pague via PIX</h4>
+                                <p>Use QR Code ou chave para pagar</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Receba instantaneamente</h4>
+                                <p>Entrega em até 10 minutos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Suporte -->
+    <section class="support-section" id="support">
+        <div class="container">
+            <h2 class="section-title">SUPORTE AO CLIENTE</h2>
+            <p class="section-subtitle">Estamos aqui para ajudar você</p>
+            
+            <div class="support-content">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Suporte 24/7</h4>
+                    <p>Atendimento via Discord para resolver qualquer problema</p>
+                    <a href="https://discord.gg/mangostore" target="_blank" class="support-link">
+                        <i class="fab fa-discord"></i> Falar com Suporte
+                    </a>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h4>FAQ</h4>
+                    <p>Perguntas frequentes sobre compras e entregas</p>
+                    <a href="#" class="support-link" id="faqBtn">
+                        <i class="fas fa-book"></i> Ver Perguntas
+                    </a>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Garantia</h4>
+                    <p>100% de garantia em todas as compras realizadas</p>
+                    <a href="#" class="support-link">
+                        <i class="fas fa-check-circle"></i> Ver Garantia
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-apple-alt footer-logo-icon"></i>
+                        <span>MANGO STORE</span>
+                    </div>
+                    <p class="footer-description">
+                        Loja especializada em Roblox • Blox Fruits • GPO
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://discord.gg/mangostore" target="_blank" class="social-icon">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>LOJA</h3>
+                    <ul>
+                        <li><a href="/frontend/html/blox-fruits.html">Blox Fruits</a></li>
+                        <li><a href="/frontend/html/gpo.html">Grand Piece Online</a></li>
+                        <li><a href="#payment">Pagamento PIX</a></li>
+                        <li><a href="#support">Suporte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-support">
+                    <h3>AJUDA</h3>
+                    <ul>
+                        <li><a href="#payment">Como Comprar</a></li>
+                        <li><a href="#faqBtn">FAQ</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 MANGO STORE GAMER. Todos os direitos reservados.</p>
+                <p>Este site não é afiliado à Roblox Corporation. Todos os jogos são propriedade de seus respectivos donos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="logo">
+                    <i class="fas fa-apple-alt logo-icon"></i>
+                    <span class="logo-text">
+                        <span class="logo-mango">MANGO</span>
+                        <span class="logo-store">STORE</span>
+                    </span>
+                </div>
+                <h3>Entrar na sua conta</h3>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </label>
+                    <input type="email" id="email" placeholder="seu.email@exemplo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Senha
+                    </label>
+                    <input type="password" id="password" placeholder="Sua senha" required>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Lembrar de mim</label>
+                    </div>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-block btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Entrar
+                </button>
+                
+                <div class="register-link">
+                    <p>Não tem uma conta? <a href="/frontend/html/paginade_login.html" id="registerBtn">Cadastre-se aqui</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal FAQ -->
+    <div class="modal-overlay" id="faqModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeFaqModal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <h3>Perguntas Frequentes</h3>
+            </div>
+            
+            <div class="faq-content">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como recebo meus itens após a compra?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Os itens são entregues diretamente na sua conta do Roblox em até 5 minutos após a confirmação do pagamento via PIX.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais formas de pagamento são aceitas?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceitamos apenas pagamentos via PIX para garantir maior segurança e agilidade nas transações.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>É seguro comprar na Mango Store?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Somos uma loja 100% segura com mais de 10.000 clientes satisfeitos. Todas as transações são protegidas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como posso entrar em contato com o suporte?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Entre no nosso servidor do Discord ou envie uma mensagem para nossa equipe de suporte 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/frontend/scripts/script_pgprincipal.js"></script>
+</body>
+</html>

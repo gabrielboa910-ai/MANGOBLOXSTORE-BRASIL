@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango Store - Login</title>
+    <link rel="stylesheet" href="/frontend/css/css_pagina_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="container">
+        <!-- Painel esquerdo - Branding Mango Store -->
+        <div class="brand-panel">
+            <div class="brand-content">
+                <div class="logo-container">
+                    <div class="mango-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h1 class="brand-name">
+                        <span class="mango-text">MANGO</span>
+                        <span class="store-text">STORE</span>
+                    </h1>
+                </div>
+                
+                <div class="brand-tagline">
+                    <h2>Sua loja de frutas para jogos preferida!</h2>
+                    <p>Entre em sua conta para acessar ofertas exclusivas, acompanhar pedidos e gerenciar sua assinatura de frutas frescas.</p>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Entrega Rápida</h3>
+                            <p>Frutas entregues em até 24h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Produtos Incriveis</h3>
+                            <p>Todos os produtos 100% garantidos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Ofertas Exclusivas</h3>
+                            <p>Descontos especiais para clientes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"A Mango Store revolucionou minha maneira de comprar frutas em games!"</p>
+                    </div>
+                    <div class="author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Maria Silva</h4>
+                            <p>Cliente há 2 dias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="brand-footer">
+                <p>© 2026 Mango Store. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Painel direito - Login -->
+        <div class="login-panel">
+            <div class="login-header">
+                <h2>Bem-vindo de volta!</h2>
+                <p>Entre com sua conta para continuar</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </label>
+                    <input type="email" id="email" placeholder="seu.email@exemplo.com" required>
+                    <div class="input-feedback" id="emailFeedback"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Senha
+                    </label>
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="input-feedback" id="passwordFeedback"></div>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Lembrar de mim</label>
+                    </div>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+                
+                <!-- Botão com link para página principal -->
+                <a href="/frontend/html/index.html" class="login-button-link">
+                    <button type="button" class="login-button" id="loginButton">
+                        <span class="button-text">Entrar na conta</span>
+                        <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </a>
+                
+                <div class="divider">
+                    <span>ou entre com</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-button google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button type="button" class="social-button apple">
+                        <i class="fab fa-apple"></i> Apple
+                    </button>
+                </div>
+                
+                <div class="signup-link">
+                    <p>Não tem uma conta? <a href="#" class="signup-text">Crie uma agora</a></p>
+                    <p class="signup-benefit">E ganhe 15% de desconto na primeira compra!</p>
+                </div>
+            </form>
+            
+            <div class="demo-credentials">
+                <div class="demo-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Credenciais de demonstração</h3>
+                </div>
+                <p><i class="fas fa-envelope demo-icon"></i> <strong>E-mail:</strong> cliente@mangostore.com</p>
+                <p><i class="fas fa-key demo-icon"></i> <strong>Senha:</strong> qualquer senha funciona</p>
+                <p class="demo-note">Esta é uma página de demonstração. Nenhum dado será enviado ou armazenado.</p>
+            </div>
+            
+            <div class="security-notice">
+                <i class="fas fa-shield-alt"></i>
+                <p>Suas informações estão seguras conosco. Usamos criptografia de ponta para proteger seus dados.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mango flutuante decorativo -->
+    <div class="mango-decoration">
+        <div class="mango mango-1">
+            <i class="fas fa-apple-alt"></i>
+        </div>
+        <div class="mango mango-2">
+            <i class="fas fa-leaf"></i>
+        </div>
+        <div class="mango mango-3">
+            <i class="fas fa-seedling"></i>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+<script src="/frontend/scripts/script_pglogin.js"></script>
+</html>

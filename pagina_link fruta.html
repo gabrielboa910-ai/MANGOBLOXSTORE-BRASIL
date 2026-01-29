@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango Store - Blox Fruits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/css/css_link1.css">
+</head>
+<body>
+    <!-- Background animado com quadradinhos -->
+    <div class="background-grid"></div>
+    
+    <!-- Header com navegação simplificada -->
+    <header class="blox-header">
+        <div class="container">
+            <nav class="blox-navbar">
+                <div class="blox-nav-left">
+                    <a href="/frontend/html/index.html" class="back-home-btn" id="homeBtn">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+                
+                <div class="blox-nav-center">
+                    <div class="blox-logo" id="mainLogo">
+                        <div class="blox-logo-text">
+                            <span class="blox-logo-mango">MANGO</span>
+                            <span class="blox-logo-store">STORE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blox-nav-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="blox-hero">
+        <div class="container">
+            <div class="blox-hero-content">
+                <h1 class="blox-hero-title">Blox Fruits</h1>
+                <p class="blox-hero-subtitle">As melhores frutas e contas para sua aventura no Roblox</p>
+                <div class="blox-hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Entrega Instantânea</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Seguro</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-headset"></i>
+                        <span>Suporte 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="blox-filters">
+        <div class="container">
+            <div class="filters-container">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i>
+                    <span>Todos</span>
+                </button>
+                <button class="filter-btn" data-filter="fruit">
+                    <i class="fas fa-apple-alt"></i>
+                    <span>Frutas</span>
+                </button>
+                <button class="filter-btn" data-filter="account">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Contas</span>
+                </button>
+                <button class="filter-btn" data-filter="bundle">
+                    <i class="fas fa-box"></i>
+                    <span>Pacotes</span>
+                </button>
+                <button class="filter-btn" data-filter="mythical">
+                    <i class="fas fa-crown"></i>
+                    <span>Miticas</span>
+                </button>
+                <button class="filter-btn" data-filter="legendary">
+                    <i class="fas fa-gem"></i>
+                    <span>Lendárias</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Produtos -->
+    <section class="blox-products">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Os produtos serão carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalhes do Produto -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-product-image" id="modalProductImage">
+                <!-- Imagem será carregada via JS -->
+            </div>
+            <div class="modal-product-info">
+                <h3 class="modal-product-title" id="modalProductTitle"></h3>
+                <div class="modal-product-category" id="modalProductCategory"></div>
+                <p class="modal-product-description" id="modalProductDescription"></p>
+                
+                <div class="modal-product-specs">
+                    <h4>Especificações:</h4>
+                    <ul id="modalProductSpecs">
+                        <!-- Especificações serão carregadas via JS -->
+                    </ul>
+                </div>
+                
+                <div class="modal-product-price">
+                    <div class="price-info">
+                        <span class="old-price" id="modalOldPrice"></span>
+                        <span class="current-price" id="modalCurrentPrice"></span>
+                        <span class="discount-badge" id="modalDiscount"></span>
+                    </div>
+                    <div class="delivery-info">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Entrega automática em até 10 minutos</span>
+                    </div>
+                </div>
+                
+                <div class="modal-product-actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus" id="qtyMinus">-</button>
+                        <span class="qty-value" id="qtyValue">1</span>
+                        <button class="qty-btn plus" id="qtyPlus">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" id="modalAddToCart">
+                        <i class="fas fa-cart-plus"></i>
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer da página -->
+    <footer class="blox-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span>MANGO STORE</span>
+                    </div>
+                    <p class="footer-description">
+                        Sua loja confiável de produtos para Blox Fruits e outros jogos Roblox.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <a href="/frontend/html/index.html" class="footer-link">Página Inicial</a>
+                    <a href="/frontend/html/index.html" class="footer-link">Contato</a>
+                    <a href="/frontend/html/index.html" class="footer-link">Política de Privacidade</a>
+                    <a href="/frontend/html/index.html" class="footer-link">Termos de Serviço</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Métodos de Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-pix"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Mango Store. Todos os direitos reservados.</p>
+                <p class="disclaimer">Este site não é afiliado à Roblox Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+<script src="/frontend/scripts/script_link1.js"></script>
+</html>
